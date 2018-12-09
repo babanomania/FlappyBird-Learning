@@ -74,8 +74,7 @@ function draw() {
 
 function nextGeneration() {
 
-    
-    updateScoreData( "score_chart", top_score );
+    updateScoreData( generation, "score_chart", top_score );
     generation++;
 
     if (birds.length == 0) {

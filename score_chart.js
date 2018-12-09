@@ -2,8 +2,8 @@
 var score_data = [];
 var chartPerGeneration = 50;
 
-function updateScoreData( id, score ){
-    if (frameCount % 50 == 0) {
+function updateScoreData( gen, id, score ){
+    if (gen % chartPerGeneration == 0) {
         score_data.push(score);
         showScoreChart(id);
     }
@@ -15,7 +15,7 @@ function showScoreChart(id) {
     var ctx = document.getElementById(id).getContext('2d');
     var chart_labels = [];
     for( var idx=0; idx < score_data.length; idx++ ){
-        chart_labels.push( (idx + 1) * chartPerGeneration );
+        chart_labels.push( idx * chartPerGeneration );
     }
 
     var chart_config = {
